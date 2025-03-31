@@ -1,8 +1,9 @@
+import os
+import pathlib
+
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-import os
-import pathlib
 
 # Create data directory if it doesn't exist
 # Handle both local development and Docker environment
