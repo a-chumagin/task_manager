@@ -8,8 +8,6 @@ COPY requirements.txt .
 # Install dependencies using pip (simplifying to avoid credential issues)
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Install uv package manager
-RUN pip install --no-cache-dir uv
 
 # Copy the rest of the application
 COPY . .

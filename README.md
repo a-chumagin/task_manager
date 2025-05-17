@@ -60,11 +60,13 @@ This project includes a GitHub Actions workflow that runs on push to the main br
 
 ### Starting the application
 
+Start both the backend API and the frontend UI with Docker Compose:
+
 ```bash
 docker-compose up -d
 ```
 
-The API will be available at http://localhost:8000
+The API will be available at http://localhost:8000 and the UI at http://localhost:3000.
 
 ### API Documentation
 
@@ -127,3 +129,34 @@ curl -X 'DELETE' \
   'http://localhost:8000/tasks/1' \
   -H 'accept: application/json'
 ```
+
+## Frontend UI
+
+This repository also provides a simple Next.js application located in the `frontend` directory. The UI consumes the same API and lets you create, complete and delete tasks through a browser.
+
+### Running the UI
+
+During development you can run the UI locally:
+1. Install dependencies (requires internet access):
+   ```bash
+   cd frontend
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+   The app will be available at `http://localhost:3000`.
+
+When using Docker Compose the UI will be served from the container at the same address.
+
+### Testing the UI
+
+- Unit tests:
+  ```bash
+  npm test
+  ```
+- End-to-end tests with Playwright:
+  ```bash
+  npm run test:e2e
+  ```

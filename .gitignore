@@ -52,3 +52,8 @@ log/
 
 # Local development settings
 .local/
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/.next/
